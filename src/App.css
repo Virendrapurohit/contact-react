@@ -1,38 +1,29 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Hero {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(255 255 255);
+  background-image: url(C:\Users\CT_USER\Documents\Contect-Form-React\contact-form\src\Images\flat-design-illustration-customer-support_23-2148887720.avif);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
-.App-link {
-  color: #61dafb;
+.content {
+  color: rgb(0, 0, 0);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.invalid {
+  border:1px solid red !important;
+ }
+ .valid {
+  border:1px solid rgb(13, 145, 24) !important;
+ }
+ input, textarea {
+  outline: none !important;
+  box-shadow: none !important; 
+}
+.Htag{
+  font-size: 30px;
+  font-weight: bold;
 }

@@ -1,44 +1,109 @@
-import React from 'react';
-import { Stack, Text, Link, FontWeights, IStackTokens, IStackStyles, ITextStyles } from '@fluentui/react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Formik } from "formik";
+//import ContactForm from ".//";
+import * as Yup from "yup";
+import ContactForm from "./Component/ContactForm";
 
-const boldStyle: Partial<ITextStyles> = { root: { fontWeight: FontWeights.semibold } };
-const stackTokens: IStackTokens = { childrenGap: 15 };
-const stackStyles: Partial<IStackStyles> = {
-  root: {
-    width: '960px',
-    margin: '0 auto',
-    textAlign: 'center',
-    color: '#605e5c',
-  },
-};
+function App() {
 
-export const App: React.FunctionComponent = () => {
-  return (
-    <Stack horizontalAlign="center" verticalAlign="center" verticalFill styles={stackStyles} tokens={stackTokens}>
-      <img className="App-logo" src={logo} alt="logo" />
-      <Text variant="xxLarge" styles={boldStyle}>
-        Welcome to your Fluent UI app
-      </Text>
-      <Text variant="large">For a guide on how to customize this project, check out the Fluent UI documentation.</Text>
-      <Text variant="large" styles={boldStyle}>
-        Essential links
-      </Text>
-      <Stack horizontal tokens={stackTokens} horizontalAlign="center">
-        <Link href="https://developer.microsoft.com/en-us/fluentui#/get-started/web">Docs</Link>
-        <Link href="https://stackoverflow.com/questions/tagged/office-ui-fabric">Stack Overflow</Link>
-        <Link href="https://github.com/microsoft/fluentui/">Github</Link>
-        <Link href="https://twitter.com/fluentui">Twitter</Link>
-      </Stack>
-      <Text variant="large" styles={boldStyle}>
-        Design system
-      </Text>
-      <Stack horizontal tokens={stackTokens} horizontalAlign="center">
-        <Link href="https://developer.microsoft.com/en-us/fluentui#/styles/web/icons">Icons</Link>
-        <Link href="https://developer.microsoft.com/en-us/fluentui#/styles/web">Styles</Link>
-        <Link href="https://aka.ms/themedesigner">Theme designer</Link>
-      </Stack>
-    </Stack>
-  );
-};
+    const ErrorSchema = Yup.object().shape({
+        username: Yup.string()
+            .required("Name is required")
+            .min(2, "too Short")
+            .max(12, "Too Long"),
+        Qualification: Yup.string()
+            .typeError("Please Select your Qualification")
+            //.integer("must be an integer")
+            .required("Required Qualification"),
+
+        Contry: Yup.string()
+            .typeError("Please Select your Contry")
+
+            .required("Required Contry"),
+        State: Yup.string()
+            .typeError("Please Select your State")
+
+            .required("Required State"),
+        Pincode: Yup.string()
+            .typeError("Please Select your Pincode")
+
+            .required("Required Pincode"),
+
+
+        Experience: Yup.string()
+            .typeError("Please Select your Experience")
+
+            .required("Required Experience"),
+
+        // CurrentyearlyCTC: Yup.string()
+        // .typeError("Please Select your CurrentyearlyCTC")
+
+        // .required("Required CurrentyearlyCTC")
+
+        CurrentyearlyCTC: Yup.string()
+            .typeError("Please Select your CurrentyearlyCTC")
+
+            .required("Required CurrentyearlyCTC"),
+
+
+        ECTC: Yup.string()
+            .typeError("Please Select your ECTC")
+
+            .required("Required ECTC")
+
+        // UploadCV: Yup.string()
+        // .typeError("Please Select your UploadCV")
+
+        // .required("Required ECTC")
+        //  .min(18, "You must be at least 18 years")
+        //  .max(60, "You must be at less than 60 years")
+        ,
+        email: Yup.string().email("Invalid email").required("Required"),
+        phone: Yup.string()
+            .matches(
+                /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/,
+                "Not a Phone number"
+            )
+            .required("Required"),
+        message: Yup.string()
+            .min(8, "Too Short!")
+            .max(100, "Too Long!")
+            .required("Required"),
+    });
+    return (
+        <div className="container pt-5">
+            <div className="row justify-content-sm-center pt-5">
+                <div className="col-sm-6 shadow round pb-5">
+                    <h3 className=" pt-3 Htag ms-4 ">Contact Us</h3>
+                    <Formik
+                        initialValues={{
+                            username: "",
+                            Qualification: "",
+                            email: "",
+                            phone: "",
+                            message: "",
+                            Contry: "",
+                            State: "",
+                            Pincode: "",
+                            Experience: "",
+                            CurrentyearlyCTC: "",
+                            ExpectedyearlyCTC: "",
+                            UploadCV: "",
+
+                        }}
+                        onSubmit={(value, { resetForm }) => {
+                            console.log(value);
+                            resetForm();
+                        }}
+                        validationSchema={ErrorSchema}
+                        component={ContactForm}
+                    />
+
+                </div>
+            </div>
+        </div>
+    );
+}
+
+export default App;
