@@ -1,12 +1,12 @@
 .Hero {
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   height: 100vh;
   background-color: rgb(255 255 255);
   background-image: url(C:\Users\CT_USER\Documents\Contect-Form-React\contact-form\src\Images\flat-design-illustration-customer-support_23-2148887720.avif);
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
 }
 
 .content {
@@ -14,16 +14,130 @@
 }
 
 .invalid {
-  border:1px solid red !important;
- }
- .valid {
-  border:1px solid rgb(13, 145, 24) !important;
- }
- input, textarea {
-  outline: none !important;
-  box-shadow: none !important; 
+  border: 1px solid red !important;
 }
-.Htag{
+
+.valid {
+  border: 1px solid rgb(13, 145, 24) !important;
+}
+
+input,
+textarea {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.Htag {
   font-size: 30px;
   font-weight: bold;
+}
+
+.Maleradio {
+  margin: 7px 4px;
+}
+
+.box-1 {
+  padding: 30px;
+}
+
+.form-check-input {
+  margin: 4px 23px;
+}
+
+.Navfixed {
+  box-shadow: #dddddd 5px 10px 15px;
+  background-color: #f1f1f1;
+  padding: 20px;
+  position: fixed;
+  margin-left: -38px;
+  /* margin: -125px -50px; */
+  width: 100%;
+}
+
+.Navfixed+.content {
+  padding-top: 60px;
+}
+
+/* .coloertext {
+  color: rgb(214, 122, 127);
+} */
+
+
+
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+}
+
+#customers td,
+#customers th {
+  border: 1px solid #ddd;
+  padding: 7px;
+
+}
+
+#customers tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#customers tr:hover {
+  background-color: #ddd;
+}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  /* text-align: left; */
+  background-color: #04AA6D;
+  color: white;
+
+}
+
+.Tabelgap {
+  border-collapse: collapse;
+}
+
+table.list {
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  padding: 8px;
+  font-size: 13px;
+}
+
+tr:nth-child(even),
+table.list thead>tr {
+  background-color: #dddddd;
+}
+
+.sarechbar {
+  margin: 126px 0px;
+}
+
+.Appp {
+  margin-top: 50px;
+
+}
+
+.secondary {
+  color: black;
+  text-decoration: none;
+  margin: 8px;
+}
+
+.secondary:hover {
+  color: aquamarine;
+}
+
+.Colore {
+  box-shadow: -57px 0 11px 0px;
+  margin-top: -50px;
+  margin-bottom: 41px;
+}
+
+.Supportedbutton {
+  display: contents;
 }
