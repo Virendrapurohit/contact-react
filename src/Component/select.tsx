@@ -130,7 +130,7 @@ const Appp = () => {
             {
                 accessorKey: 'Gendern',
                 header: 'Gender',
-                size: 150,
+                size: 100,
 
             },
 
@@ -156,7 +156,7 @@ const Appp = () => {
                 footer={[
                     <Button key="back" onClick={handleCancel}>
                         Return
-                        
+
                     </Button>,
                     <Button key="submit" type="primary" loading={loading} onClick={handleOk} >
                         Delete
