@@ -15,7 +15,7 @@ const Navbar1 = () => {
       {/* <Link to={'/Getdata'}><Button>Data</Button></Link>  */}
       <Content
         style={{
-          padding: '0 48px',
+          padding: '0 47px',
         }}>
 
         <Breadcrumb className='Navfixed'>
